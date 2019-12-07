@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">EndicottParkingApp</string>
+    <string name="endicott_parking">Endicott Parking</string>
+    <string name="student_faculty_id">Student/Faculty ID</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="please_enter_the_following_information_to_register">Please enter the following information to register.</string>
+    <string name="the_id_on_your_card">The ID on your card</string>
+    <string name="email_address">Email Address</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="your_college_email">Your college email</string>
+    <string name="decal_type">Decal Type</string>
+    <string name="home_building">Home Building</string>
+    <string name="register">Register</string>
+    <string name="back_to_login">Back to Login</string>
+</resources>
