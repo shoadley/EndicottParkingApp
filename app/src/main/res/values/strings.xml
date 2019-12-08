@@ -13,4 +13,14 @@
     <string name="home_building">Home Building</string>
     <string name="register">Register</string>
     <string name="back_to_login">Back to Login</string>
+    <string-array name="buildings_array">
+        <item>Beacon</item>
+        <item>Standish</item>
+        <item>Life and Sciences Building</item>
+    </string-array>
+    <string-array name="decals_array">
+        <item>Student</item>
+        <item>Faculty</item>
+        <item>Commuter</item>
+    </string-array>
 </resources>
