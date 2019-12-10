@@ -13,6 +13,9 @@
     <string name="home_building">Home Building</string>
     <string name="register">Register</string>
     <string name="back_to_login">Back to Login</string>
+    <string name="defaulthometext">DefaultHomeText</string>
+    <string name="parking">Parking</string>
+    <string name="logout">Logout</string>
     <string-array name="buildings_array">
         <item>Beacon</item>
         <item>Standish</item>
