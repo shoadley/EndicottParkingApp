@@ -1,7 +1,9 @@
 package com.shoadley.endicottparkingapp;
 
-public class User {
-    private int id;
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private String id;
     private String password;
     private String email;
     private String decal;
@@ -9,7 +11,7 @@ public class User {
 
     public User() {}
 
-    public User(int id, String password, String email, String decal, String homeBuilding) {
+    public User(String id, String password, String email, String decal, String homeBuilding) {
         this.setId(id);
         this.setPassword(password);
         this.setEmail(email);
@@ -17,11 +19,11 @@ public class User {
         this.setHomeBuilding(homeBuilding);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

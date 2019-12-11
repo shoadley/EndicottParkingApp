@@ -31,6 +31,24 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/textViewID"
+                android:layout_width="118dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/student_faculty_id" />
+
+            <EditText
+                android:id="@+id/editTextRegisterID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/the_id_on_your_card"
+                android:inputType="number" />
+
+            <TextView
                 android:id="@+id/textViewEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,23 +65,6 @@
                 android:ems="10"
                 android:hint="@string/your_college_email"
                 android:inputType="textEmailAddress" />
-
-            <TextView
-                android:id="@+id/textViewPassword2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/confirm_password" />
-
-            <EditText
-                android:id="@+id/editTextConfirmPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:inputType="textVisiblePassword" />
 
             <TextView
                 android:id="@+id/textViewPassword"
@@ -83,22 +84,21 @@
                 android:inputType="textVisiblePassword" />
 
             <TextView
-                android:id="@+id/textViewID"
-                android:layout_width="118dp"
+                android:id="@+id/textViewPassword2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/student_faculty_id" />
+                android:text="@string/confirm_password" />
 
             <EditText
-                android:id="@+id/editTextRegisterID"
+                android:id="@+id/editTextConfirmPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
                 android:ems="10"
-                android:hint="@string/the_id_on_your_card"
-                android:inputType="number" />
+                android:inputType="textVisiblePassword" />
 
             <TextView
                 android:id="@+id/textViewHomeBuilding"
@@ -137,6 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
+                android:onClick="createUser"
                 android:text="@string/register" />
 
             <Button
