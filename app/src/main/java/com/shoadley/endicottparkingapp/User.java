@@ -7,16 +7,18 @@ public class User implements Serializable {
     private String password;
     private String email;
     private String decal;
-    private String homeBuilding;
+    private String building;
+    private String currentLot;
 
     public User() {}
 
-    public User(String id, String password, String email, String decal, String homeBuilding) {
+    public User(String id, String password, String email, String decal, String homeBuilding, String currentLot) {
         this.setId(id);
         this.setPassword(password);
         this.setEmail(email);
         this.setDecal(decal);
-        this.setHomeBuilding(homeBuilding);
+        this.setBuilding(homeBuilding);
+        this.setCurrentLot(currentLot);
     }
 
     public String getId() {
@@ -51,11 +53,19 @@ public class User implements Serializable {
         this.decal = decal;
     }
 
-    public String getHomeBuilding() {
-        return homeBuilding;
+    public String getBuilding() {
+        return building;
     }
 
-    public void setHomeBuilding(String homeBuilding) {
-        this.homeBuilding = homeBuilding;
+    public void setBuilding(String homeBuilding) {
+        this.building = homeBuilding;
+    }
+
+    public String getCurrentLot() {
+        return currentLot;
+    }
+
+    public void setCurrentLot(String currentLot) {
+        this.currentLot = currentLot;
     }
 }

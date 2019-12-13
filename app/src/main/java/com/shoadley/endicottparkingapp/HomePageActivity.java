@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class HomePageActivity extends AppCompatActivity {
 
-    TextView homeTextView;
-    Intent incomingIntent;
-    User user;
+    private TextView homeTextView;
+    private Intent incomingIntent;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +23,16 @@ public class HomePageActivity extends AppCompatActivity {
 
         String userId = user.getId();
         homeTextView.setText("Welcome " + userId);
+    }
+
+    public void toParking(View view) {
+        Intent intent = new Intent(HomePageActivity.this, ParkingActivity.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
+    }
+
+    public void toLogin(View view) {
+        Intent intent = new Intent(HomePageActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

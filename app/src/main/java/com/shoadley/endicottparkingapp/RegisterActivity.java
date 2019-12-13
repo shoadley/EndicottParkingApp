@@ -28,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     public static final String DECAL_KEY = "decal";
     public static final String BUILDING_KEY = "building";
     public static final String EMAIL_KEY = "email";
+    public static final String CURRENT_LOT_KEY = "currentLot";
 
     private DocumentReference mUserRef;
 
@@ -73,11 +74,12 @@ public class RegisterActivity extends AppCompatActivity {
                         dataToSave.put(EMAIL_KEY,emailText);
                         dataToSave.put(DECAL_KEY,decalText);
                         dataToSave.put(BUILDING_KEY,buildingText);
+                        dataToSave.put(CURRENT_LOT_KEY,"0");
                         mUserRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Log.d("User","User has been created!");
-                                User user = new User(idText, passwordText, emailText, decalText, buildingText);
+                                User user = new User(idText, passwordText, emailText, decalText, buildingText, "0");
                                 Intent intent = new Intent(RegisterActivity.this, HomePageActivity.class);
                                 intent.putExtra("User", user);
                                 startActivity(intent);

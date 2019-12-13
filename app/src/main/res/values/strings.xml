@@ -16,10 +16,16 @@
     <string name="defaulthometext">DefaultHomeText</string>
     <string name="parking">Parking</string>
     <string name="logout">Logout</string>
+    <string name="back_to_home_page">Back to Home Page</string>
+    <string name="park">Park</string>
+    <string name="defaultdistancetext">defaultDistanceText</string>
+    <string name="defaultspotstext">defaultSpotsText</string>
+    <string name="defaultparkingtext">defaultParkingText</string>
+    <string name="map_to_parking_spot">Map to parking spot</string>
     <string-array name="buildings_array">
         <item>Beacon</item>
         <item>Standish</item>
-        <item>Life and Sciences Building</item>
+        <item>LSB</item>
     </string-array>
     <string-array name="decals_array">
         <item>Student</item>

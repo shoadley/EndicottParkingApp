@@ -4,13 +4,22 @@ public class ParkingLot {
     private int facultySpots;
     private int studentSpots;
     private int commuterSpots;
-    private int handicappedSpots;
     private int id;
     private int distanceBeacon;
     private int distanceStandish;
     private int distanceLSB;
 
     public ParkingLot() {}
+
+    public ParkingLot(int facultySpots, int studentSpots, int commuterSpots, int id, int distanceBeacon, int distanceStandish, int distanceLSB) {
+        this.setFacultySpots(facultySpots);
+        this.setStudentSpots(studentSpots);
+        this.setCommuterSpots(commuterSpots);
+        this.setId(id);
+        this.setDistanceBeacon(distanceBeacon);
+        this.setDistanceStandish(distanceStandish);
+        this.setDistanceLSB(distanceLSB);
+    }
 
     public int getFacultySpots() {
         return facultySpots;
@@ -34,14 +43,6 @@ public class ParkingLot {
 
     public void setCommuterSpots(int commuterSpots) {
         this.commuterSpots = commuterSpots;
-    }
-
-    public int getHandicappedSpots() {
-        return handicappedSpots;
-    }
-
-    public void setHandicappedSpots(int handicappedSpots) {
-        this.handicappedSpots = handicappedSpots;
     }
 
     public int getId() {
