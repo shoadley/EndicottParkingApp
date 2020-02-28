@@ -5,20 +5,14 @@ public class ParkingLot {
     private int studentSpots;
     private int commuterSpots;
     private int id;
-    private int distanceBeacon;
-    private int distanceStandish;
-    private int distanceLSB;
 
     public ParkingLot() {}
 
-    public ParkingLot(int facultySpots, int studentSpots, int commuterSpots, int id, int distanceBeacon, int distanceStandish, int distanceLSB) {
+    public ParkingLot(int facultySpots, int studentSpots, int commuterSpots, int id) {
         this.setFacultySpots(facultySpots);
         this.setStudentSpots(studentSpots);
         this.setCommuterSpots(commuterSpots);
         this.setId(id);
-        this.setDistanceBeacon(distanceBeacon);
-        this.setDistanceStandish(distanceStandish);
-        this.setDistanceLSB(distanceLSB);
     }
 
     public int getFacultySpots() {
@@ -52,28 +46,5 @@ public class ParkingLot {
     public void setId(int id) {
         this.id = id;
     }
-
-    public int getDistanceBeacon() {
-        return distanceBeacon;
-    }
-
-    public void setDistanceBeacon(int distanceBeacon) {
-        this.distanceBeacon = distanceBeacon;
-    }
-
-    public int getDistanceStandish() {
-        return distanceStandish;
-    }
-
-    public void setDistanceStandish(int distanceStandish) {
-        this.distanceStandish = distanceStandish;
-    }
-
-    public int getDistanceLSB() {
-        return distanceLSB;
-    }
-
-    public void setDistanceLSB(int distanceLSB) {
-        this.distanceLSB = distanceLSB;
-    }
+    
 }

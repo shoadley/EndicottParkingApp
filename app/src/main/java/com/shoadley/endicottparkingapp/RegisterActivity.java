@@ -1,6 +1,5 @@
 package com.shoadley.endicottparkingapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,6 +19,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.annotation.Nonnull;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -57,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
         mUserRef = FirebaseFirestore.getInstance().document("users/" + idText);
         mUserRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+            public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
@@ -86,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
-                            public void onFailure(@NonNull Exception e) {
+                            public void onFailure(@Nonnull Exception e) {
                                 Log.w("User", "User was not created!");
                             }
                         });
