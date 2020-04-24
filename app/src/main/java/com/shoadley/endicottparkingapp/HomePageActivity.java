@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -33,6 +34,13 @@ public class HomePageActivity extends AppCompatActivity {
 
     public void toLogin(View view) {
         Intent intent = new Intent(HomePageActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void toOptions(View view) {
+        Log.d("Launch","Launching options");
+        Intent intent = new Intent(HomePageActivity.this, OptionsActivity.class);
+        intent.putExtra("User", user);
         startActivity(intent);
     }
 }

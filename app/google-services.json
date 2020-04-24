@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "283050921668",
+    "firebase_url": "https://endicott-parking-app.firebaseio.com",
+    "project_id": "endicott-parking-app",
+    "storage_bucket": "endicott-parking-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283050921668:android:271c533bbdcb88e17f8391",
+        "android_client_info": {
+          "package_name": "com.shoadley.endicottparkingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283050921668-cd992ju1m1lfl5hcbl1oo1d7jvhk4f0k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shoadley.endicottparkingapp",
+            "certificate_hash": "de1d67bcd79fcf83dd2a36bf019cffcb6e270217"
+          }
+        },
+        {
+          "client_id": "283050921668-7ig4gnibkfdniti1anmakv0v03ehq3ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWg-3890_chq3qyCerbUSfQLitF1oWMgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283050921668-7ig4gnibkfdniti1anmakv0v03ehq3ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

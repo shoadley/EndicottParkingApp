@@ -22,8 +22,14 @@
     <string name="defaultspotstext">defaultSpotsText</string>
     <string name="defaultparkingtext">defaultParkingText</string>
     <string name="map_to_parking_spot">Map to parking spot</string>
+    <string name="welcome_to_options">Welcome to Options</string>
+    <string name="decal">Decal</string>
+    <string name="building">Building</string>
+    <string name="email">Email</string>
+    <string name="save_and_exit">Save and Exit</string>
+    <string name="exit_without_saving">Exit Without Saving</string>
     <string-array name="buildings_array">
-        <item>Beacon</item>
+        <item>Bayview</item>
         <item>Standish</item>
         <item>LSB</item>
     </string-array>
