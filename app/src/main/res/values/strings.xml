@@ -31,7 +31,16 @@
     <string-array name="buildings_array">
         <item>Bayview</item>
         <item>Standish</item>
+        <item>Callahan</item>
         <item>LSB</item>
+        <item>Hawthorn</item>
+        <item>Library</item>
+        <item>Marblehead-Stoneridge</item>
+        <item>Mods</item>
+        <item>Post</item>
+        <item>Standish</item>
+        <item>VPAC</item>
+        <item>Beacon-Winthrop</item>
     </string-array>
     <string-array name="decals_array">
         <item>Student</item>

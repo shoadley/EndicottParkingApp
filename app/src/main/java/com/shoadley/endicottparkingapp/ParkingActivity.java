@@ -75,24 +75,342 @@ public class ParkingActivity extends AppCompatActivity {
                                     }
                                 }
                                 Log.d("Short Field",shortField);
-                                if (shortField.equals("distLot1")){tempLot = "01";}
-                                else if (shortField.equals("distLot2")){tempLot = "02";}
-                                else if (shortField.equals("distLot3")){tempLot = "03";}
-                                else if (shortField.equals("distLot4")){tempLot = "04";}
-                                else if (shortField.equals("distLot5")){tempLot = "05";}
-                                else if (shortField.equals("distLot6")){tempLot = "06";}
-                                else if (shortField.equals("distLot7")){tempLot = "07";}
-                                else if (shortField.equals("distLot8")){tempLot = "08";}
-                                else if (shortField.equals("distLot9")){tempLot = "09";}
-                                else if (shortField.equals("distLot10")){tempLot = "10";}
-                                else if (shortField.equals("distLot11")){tempLot = "11";}
-                                else if (shortField.equals("distLot12")){tempLot = "12";}
-                                else if (shortField.equals("distLot13")){tempLot = "13";}
-                                else if (shortField.equals("distLot14")){tempLot = "14";}
-                                else if (shortField.equals("distLot15")){tempLot = "15";}
-                                else if (shortField.equals("distLot16")){tempLot = "16";}
-                                else if (shortField.equals("distLot17")){tempLot = "17";}
-                                else if (shortField.equals("distLot18")){tempLot = "18";}
+                                if (shortField.equals("distLot02")){
+                                    tempLot = "2";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/02");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot04")){
+                                    tempLot = "4";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/04");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot05")){
+                                    tempLot = "5";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/05");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot06")){
+                                    tempLot = "6";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/06");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot07")){
+                                    tempLot = "7";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/07");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot09")){
+                                    tempLot = "9";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/09");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot10")){
+                                    tempLot = "10";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/10");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot13")){
+                                    tempLot = "13";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/13");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot14")){
+                                    tempLot = "14";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/14");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot15")){
+                                    tempLot = "15";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/15");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot16")){
+                                    tempLot = "16";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/16");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot18")){
+                                    tempLot = "18";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/18");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
                                 else if (shortField.equals("distLot19")){
                                     tempLot = "19";
                                     mLotRef = FirebaseFirestore.getInstance().document("lots/19");
@@ -103,9 +421,42 @@ public class ParkingActivity extends AppCompatActivity {
                                                 DocumentSnapshot document = task.getResult();
                                                 if (document.exists()) {
                                                     Log.d("Searching...","Found lot");
-                                                    if (user.getDecal().equals("Student") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
                                                         parkingTextView.setText("The closest lot is lot " + tempLot);
                                                         spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                else if (shortField.equals("distLot20")){
+                                    tempLot = "20";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/20");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
                                                         distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
                                                     }
                                                 }
@@ -115,8 +466,6 @@ public class ParkingActivity extends AppCompatActivity {
                                             }
                                         }
                                     });}
-                                else if (shortField.equals("distLot20")){tempLot = "20";}
-                                else if (shortField.equals("distLot21")){tempLot = "21";}
                                 else if (shortField.equals("distLot22")){
                                     tempLot = "22";
                                     mLotRef = FirebaseFirestore.getInstance().document("lots/22");
@@ -127,9 +476,14 @@ public class ParkingActivity extends AppCompatActivity {
                                                 DocumentSnapshot document = task.getResult();
                                                 if (document.exists()) {
                                                     Log.d("Searching...","Found lot");
-                                                    if (user.getDecal().equals("Student") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
                                                         parkingTextView.setText("The closest lot is lot " + tempLot);
                                                         spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
                                                         distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
                                                     }
                                                 }
@@ -149,9 +503,14 @@ public class ParkingActivity extends AppCompatActivity {
                                                 DocumentSnapshot document = task.getResult();
                                                 if (document.exists()) {
                                                     Log.d("Searching...","Found lot");
-                                                    if (user.getDecal().equals("Student") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
                                                         parkingTextView.setText("The closest lot is lot " + tempLot);
                                                         spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
                                                         distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
                                                     }
                                                 }
@@ -161,9 +520,168 @@ public class ParkingActivity extends AppCompatActivity {
                                             }
                                         }
                                     });}
-                                else if (shortField.equals("distLot24")){tempLot = "24";}
-                                else if (shortField.equals("distLot25")){tempLot = "25";}
-                                else if (shortField.equals("distLot26")){tempLot = "26";}
+                                else if (shortField.equals("distLot24")){
+                                    tempLot = "24";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/24");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });}
+                                else if (shortField.equals("distLot25")){
+                                    tempLot = "25";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/25");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });}
+                                else if (shortField.equals("distLot26")){
+                                    tempLot = "26";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/26");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });}
+                                else if (shortField.equals("distLot27")){
+                                    tempLot = "27";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/27");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });}
+                                else if (shortField.equals("distLot28")){
+                                    tempLot = "28";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/28");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });}
+                                else if (shortField.equals("distLot32")){
+                                    tempLot = "32";
+                                    mLotRef = FirebaseFirestore.getInstance().document("lots/32");
+                                    mLotRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@Nonnull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document.exists()) {
+                                                    Log.d("Searching...","Found lot");
+                                                    if (user.getDecal().equals("Student") || user.getDecal().equals("Commuter") && document.getLong(STUDENTSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(STUDENTSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                    else if ((user.getDecal().equals("Faculty")) && document.getLong(FACULTYSPOT_KEY).intValue() > 0){
+                                                        parkingTextView.setText("The closest lot is lot " + tempLot);
+                                                        spotsTextView.setText("Number of spots remaining: " + document.getLong(FACULTYSPOT_KEY).intValue());
+                                                        distanceTextView.setText("The distance from this lot to " + user.getBuilding() + " is " + shortDist + " feet");
+                                                    }
+                                                }
+                                                else {
+                                                    Log.d("Searching...","Could not find lot " + tempLot);
+                                                }
+                                            }
+                                        }
+                                    });}
                             }
                         }
                      else {
